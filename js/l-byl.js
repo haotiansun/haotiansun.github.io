@@ -7,7 +7,6 @@ Licensed Under MIT
 (function ( $ ) {
  
     $.fn.lbyl = function( options ) {
- 
         var s = $.extend({
             content: '',
             speed: 10,
