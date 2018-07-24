@@ -1,0 +1,29 @@
+<html>
+<body>
+<input id="btn" type="button" value=" Move It ! "/>
+<center>
+<div id="d1">
+<img id="i1" src="img/start.png" alt/>
+</div>
+</center>
+</body>
+
+<script>
+var timer=null;
+window.onload=function(){
+var odiv=document.getElementById('d1');
+var obtn=document.getElementById('btn');
+clearInterval(timer); //作用见要点①
+obtn.onclick=function(){
+timer=setInterval(function(){
+var speed=10;
+if(odiv.offsetLeft>=300){ //判断对象边距 到达指定位移则关闭定时器
+clearInterval(timer);
+}else{
+odiv.style.left=odiv.offsetLeft+speed+'px';
+}
+},30);
+}
+}
+</script>
+</html>

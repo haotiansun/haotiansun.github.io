@@ -1,458 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="assets/ico/favicon.png">
-
-    <title>Welcome to Haotian Sun's Personal Website</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="assets/css/main.css" rel="stylesheet">
+<html>
+<head>
+<script type="text/javascript">
+function hover_on(index)
+{
+    if( index == 'start')
+    {
+    var p = document.getElementById('txt')
+    p.style.color = "rgb(244,102,102)"
+    var currentBtn = document.getElementById("hiddenBtn");
+    currentBtn.style.display = "inline";
+    //document.getElementById('txt').className='c1';
     
-	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
     
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
     
-    <script src="assets/js/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/smoothscroll.js"></script> 
-    <script src="assets/js/Chart.js"></script>
+    
+    
+    var timer=null;
+window.onload=function(){
+var odiv=document.getElementById('txt');
+clearInterval(timer); //作用见要点①
+timer=setInterval(function(){
+var speed=10;
+if(odiv.offsetLeft>=100){ //判断对象边距 到达指定位移则关闭定时器
+clearInterval(timer);
+}else{
+odiv.style.left=odiv.offsetLeft+speed+'px';
+}
+},20);
+}
+    
+    
+    
+    
+    
+    
+    
+    }
+    else if(index == 'about')
+    {
+    var p = document.getElementById('txt_1')
+    p.style.color = "rgb(224,102,102)"
+    var currentBtn = document.getElementById("about");
+    currentBtn.style.display = "inline";
+    document.getElementById('txt_1').className='c1';
+    }
+    
+}
+function hover_off(index)
+{
+    if(index == 'start')
+    {
+    var p = document.getElementById('txt')
+    p.style.color = "rgb(204,102,102)" 
+    var currentBtn = document.getElementById("hiddenBtn");
+    currentBtn.style.display = "none";
+    document.getElementById('txt').className='c2';
+    }
+    else if(index == 'about')
+    {
+    var p = document.getElementById('txt_1')
+    p.style.color = "rgb(204,102,102)" 
+    var currentBtn = document.getElementById("about");
+    currentBtn.style.display = "none";
+    document.getElementById('txt_1').className='c2';
+    }
+}
+function jump(page_index)
+{
+    self.location = page_index;
+}         
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="assets/js/html5shiv.js"></script>
-      <script src="assets/js/respond.min.js"></script>
-    <![endif]-->
-  </head>
+</script>
+</head>
 
-  <body data-spy="scroll" data-offset="0" data-target="#nav">
+<body>
+<center>
+<input style="background:transparent;border:none;width:490px;height:180px;font-size:192px;text-align:center;font-family:Code Light; color:rgb(204,102,102);font-weight:lighter" type="text" id="txt_2" readonly="readonly" value="20">
+</center>
+<center>
+<!--鼠标悬停-->
+<div style="border: 1px solid red;width:1300px; height:180px; line-height:180px;" onmouseover = "hover_on('start');"  onmouseout = "hover_off('start');" >
 
-	<div id="section-topbar">
-		<div id="topbar-inner">
-			<div class="container">
-				<div class="row">
-					<div class="dropdown">
-						<ul id="nav" class="nav">
-							<li class="menu-item"><a class="smoothScroll" href="#about" title="About"><i class="icon-user"></i></a></li>
-							<li class="menu-item"><a class="smoothScroll" href="#resume" title="Resume"><i class="icon-file"></i></a></li>
-							<li class="menu-item"><a class="smoothScroll" href="#work" title="Research"><i class="icon-briefcase"></i></a></li>
-							<li class="menu-item"><a class="smoothScroll" href="#contact" title="Contact"><i class="icon-envelope"></i></a></li>
-						</ul><!--/ uL#nav -->
-					</div><!-- /.dropdown -->
+<!--文本框显示20-->
+<input style="background:transparent;border:1px solid red;width:490px;height:180px;font-size:192px;font-weight:lighter; text-align:center;font-family:Code Light; color:rgb(204,102,102);font-weight:lighter" type="text" id="txt" readonly="readonly" value="20">
+<a href=# title="Start" class="avatar">
+<img id="hiddenBtn" src = "img/start.png" style="display:none" onclick="jump('countdown.html')"/>
+</a>
+</div>
+</center>
 
-					<div class="clear"></div>
-				</div><!--/.row -->
-			</div><!--/.container -->
+<center>
+<div style="border:1px solid red;width:1300px; height:180px; line-height:180px;" onmouseover = "hover_on('about')"  onmouseout = "hover_off('about')" >
+<!--文本框显示20-->
+<input style="background:transparent;border:1px solid red;width:490px;height:180px;font-size:192px;text-align:center;font-family:Code Light;color:rgb(204,102,102);font-weight:lighter" type="text" id="txt_1" readonly="readonly" value="20" onclick="jump()">
+<a href=# title="About" class="avatar">
+<img id="about" src = "img/about.png" style="display:none; vertical-align:middle" onclick="jump('about.html')"/>
+</a>
+</div>
+</center>
 
-			<div class="clear"></div>
-		</div><!--/ #topbar-inner -->
-	</div><!--/ #section-topbar -->
-	
-	<div id="headerwrap">
-		<div class="container">
-			<div class="row centered">
-				<div class="col-lg-12">
-					<h1>Haotian Sun</h1>
-					<h3>Senior Student at Tianjin University | haotiansun96@gmail.com</h3>
-				</div><!--/.col-lg-12 -->
-			</div><!--/.row -->
-		</div><!--/.container -->
-	</div><!--/.#headerwrap -->
-	
+<style type="text/css">
+    *{margin: 0;padding:0;}
+    div{
+        width:1500px;
+        height: 180px;
+        position: relative;
+    }
+    .c1{
+    position:absolute;
+    left: 25%;
+    }
+    .c2{
+    }
+    img{
+        width: 100px;
+        position: absolute;
+        top: 50%;
+	left: 60%;
+        margin-top: -25px; /* 高度的一半 */
+        margin-left: -25px; /* 宽度的一半 */
+    }
+    
+    .avatar:hover img{
+	transform: scale(1.1);
+	transition: all 0.1s ease 0s;
+	-webkit-transform: scale(1.1);
+	-webkit-transform: all 0.1s ease 0s;
+    }
+    body{
+    background-color: #FAFAFA;
+    }
+</style>
 
-	<section id="about" name="about"></section>
-	<div id="intro">
-		<div class="container">
-			<div class="row">
-				
-				<div class="col-lg-2 col-lg-offset-1">
-					<h5>ABOUT</h5>
-				</div>
-				<div class="col-lg-6">
-					<p>I'm a senior student from Tianjin University majoring in Electronic Engineering. Having witnessed who our world has been influenced by the advanced digital device and platform, I would like to apply my technical skills in both EE and CS to the scenes in our daily lives to create the value and explore the unknown. My interests include technology, sports and music.</p>
-				</div>
-				<div class="col-lg-3">
-					<p><a href="assets/img/CV.pdf"><i class="icon-file"></i></a> <sm>DOWNLOAD CV</sm></p>
-				</div>
-				
-			</div><!--/.row -->
-		</div><!--/.container -->
-	</div><!--/ #intro -->
-
-
-	<section id="resume" name="resume"></section>
-	<!--EDUCATION DESCRIPTION -->
-	<div class="container desc">
-		<div class="row">
-
-				<div class="col-lg-2 col-lg-offset-1">
-					<h5>EDUCATION</h5>
-				</div>
-				<div class="col-lg-6">
-					<p><t>Tianjin University</t><br/>
-						<b>Bachelor of Engineering in Electronic Engineering</b> <br/>
-						
-						<i>Core Courses: Calculus, Linear Algebra, Probability and Statistics, Integral Transformation, Complex Function, C++ Programming, Signal and System, Microcomputer Principle, Digital Image Processing, Pattern Recognition</i>
-					</p>
-				</div>
-				<div class="col-lg-3">
-					<p><sm>SEP 2014 - JULY 2018</sm><br/>
-					<imp><sm>IN PROGRESS</sm></imp>
-					</p>
-				</div>
-	
-				<div class="col-lg-6 col-lg-offset-3">
-					<p><t>Nanyang Technological University</t><br/>
-						<b>Exchange Student, Electrical and Electronic Engineering</b> <br/>
-						<i>Core Courses: Data Structure and Algorithms, Electromagnetics</i>
-					</p>
-				</div>
-				<div class="col-lg-3">
-					<p><sm>AUG 2016 - DEC 2016</sm></p>
-				</div>
-	
-		</div><!--/.row -->
-		<br>
-		<hr>
-	</div><!--/.container -->
-	
-	<section id="work" name="work"></section>
-	<!--WORK DESCRIPTION -->
-	<div class="container desc">
-		<div class="row">
-
-				<div class="col-lg-2 col-lg-offset-1">
-					<h5>RESEARCH</h5>
-				</div>
-				<div class="col-lg-6">
-					<p><t>The Automatic Annotation of Piano Fingering Based on HMM</t><br/>
-						<b>Research Assistant, Tianjin University</b> <br/>
-					</p>
-					<ul style="padding:0">
-					<li>
-					Researched several mainstream methods in automatic decision of piano fingering, including dynamic programming and Hidden Markov Model.
-					</li>
-					<p></p>
-					<li>
-					Developed a method to automatically annotate the fingering for both hands and applied it to both single note and chords.
-					</li>
-					<p></p>
-					<li>
-					Built and trained a model based on the hidden Markov model, and implemented Viterbi algorithm with the model parameters to create the most appropriate piano fingering sequence for piano players to refer to.
-					</li>
-					<p></p>
-					<li>
-					Used 5-fold cross validation and obtained the average accuracy of 57.84%.
-					</li>
-					</ul>
-					<p></p>
-				</div>
-				<div class="col-lg-3">
-					<p><sm>MAY 2017 - SEP 2017</sm></p>
-				</div>
-	
-				<div class="col-lg-6 col-lg-offset-3">
-					<p><t>The Object Classification and Detection System of the Milk Tea in the Market</t><br/>
-						<b>Research Assistant, Tianjin University</b> <br/>
-					</p>
-					<ul style="padding:0">
-					<li>
-					Researched state-of-the-art methods in object detection and recognition and compared the capacity in processing of fine-grained objects of them.
-					</li>
-					<p></p>
-					<li>
-					Implemented the model Faster-RCNN on TensorFlow and optimized it by introducing some tricks.
-					</li>
-					<p></p>
-					<li>
-					Trained the model and tested it on manually labeled milk tea dataset, achieving the F-score up to 60.35.
-					</li>
-					<p></p>
-					<li>
-					Applied the whole system to the market, helping the market manage products efficiently with the economic benefit up to one hundred thousand RMB.
-					</li>
-					</ul>
-					<p></p>
-				</div>
-				<div class="col-lg-3">
-					<p><sm>MAY 2017 - AUG 2017</sm></p>
-				</div>
-				
-				<div class="col-lg-6 col-lg-offset-3">
-					<p><t>Multimedia Recommendation System Based on Mobile Device</t><br/>
-						<b>Leader, Tianjin University</b> <br/>
-					</p>
-					<ul style="padding:0">
-					<li>
-					Led a 4-student group to build a recommendation system, which would search the matching image to a given photo and was used for providing the introduction information of the paintings in a gallery.
-					</li>
-					<p></p>
-					<li>
-					Determined the outline of the project, and organized the group to complete research on the mainstream image hashing algorithms and target extraction methods.
-					</li>
-					<p></p>
-					<li>
-					Implemented the algorithms to extract the target region from the background of a image taken by the camera and developed an Android App to realize that function.
-					</li>
-					<p></p>
-					<li>
-					Investigated several camera Apps and absorbed the advantages of them into my application as the UX and UI designer.
-					</li>
-					</ul>
-					<p></p>
-				</div>
-				<div class="col-lg-3">
-					<p><sm>SEP 2016 - FEB 2017</sm></p>
-				</div>
-				
-		</div><!--/.row -->
-		<br>
-		<hr>
-	</div><!--/.container -->
-
-
-	<!--AWARDS DESCRIPTION -->
-	<div class="container desc">
-		<div class="row">
-				<div class="col-lg-2 col-lg-offset-1">
-					<h5>Publication</h5>
-				</div>
-				<div class="col-lg-6">
-					<p><b>Haotian Sun</b>, Xin Guan, Jing Xian <i>et al.</i>, <i>Automatic Fingering Annotation for Piano Score via HMM with Hybrid States of Single Note and Chord</i>, accepted by Conference on Sound and Music Technology 2017.<br/>
-					</p>
-					<p><a href="assets/img/poster.JPG"><i class="icon-file"></i></a> <sm>VIEW POSTER </sm></p>
-				</div>
-				<div class="col-lg-3">
-					<p><sm>SEP 2017</sm></p>
-				</div>
-	
-		
-		</div><!--/.row -->
-		<br>
-	</div><!--/.container -->
-	
-	
-	<!--SKILLS DESCRIPTION -->
-	<div id="skillswrap">
-		<div class="container">
-			<div class="row">
-					<div class="col-lg-2 col-lg-offset-1">
-						<h5>SKILLS</h5>
-					</div>
-					<div class="col-lg-3 centered">
-						<canvas id="javascript" height="130" width="130"></canvas>
-						<p>C</p>
-						<br>
-						<script>
-							var doughnutData = [
-									{
-										value: 70,
-										color:"#1abc9c"
-									},
-									{
-										value : 30,
-										color : "#ecf0f1"
-									}
-								];
-								var myDoughnut = new Chart(document.getElementById("javascript").getContext("2d")).Doughnut(doughnutData);
-						</script>
-					</div>
-					<div class="col-lg-3 centered">
-						<canvas id="bootstrap" height="130" width="130"></canvas>
-						<p>C++</p>
-						<br>
-						<script>
-							var doughnutData = [
-									{
-										value: 75,
-										color:"#1abc9c"
-									},
-									{
-										value : 25,
-										color : "#ecf0f1"
-									}
-								];
-								var myDoughnut = new Chart(document.getElementById("bootstrap").getContext("2d")).Doughnut(doughnutData);
-						</script>
-					</div>
-					<div class="col-lg-3 centered">
-						<canvas id="wordpress" height="130" width="130"></canvas>
-						<p>MATLAB</p>
-						<br>
-						<script>
-							var doughnutData = [
-									{
-										value: 80,
-										color:"#1abc9c"
-									},
-									{
-										value : 20,
-										color : "#ecf0f1"
-									}
-								];
-								var myDoughnut = new Chart(document.getElementById("wordpress").getContext("2d")).Doughnut(doughnutData);
-						</script>
-					</div>
-					
-					<div class="col-lg-3 col-lg-offset-3 centered">
-						<canvas id="html" height="130" width="130"></canvas>
-						<p>HTML/CSS</p>
-						<br>
-						<script>
-							var doughnutData = [
-									{
-										value: 50,
-										color:"#1abc9c"
-									},
-									{
-										value : 50,
-										color : "#ecf0f1"
-									}
-								];
-								var myDoughnut = new Chart(document.getElementById("html").getContext("2d")).Doughnut(doughnutData);
-						</script>
-					</div>
-					<div class="col-lg-3 centered">
-						<canvas id="photoshop" height="130" width="130"></canvas>
-						<p>Python</p>
-						<br>
-						<script>
-							var doughnutData = [
-									{
-										value: 75,
-										color:"#1abc9c"
-									},
-									{
-										value : 25,
-										color : "#ecf0f1"
-									}
-								];
-								var myDoughnut = new Chart(document.getElementById("photoshop").getContext("2d")).Doughnut(doughnutData);
-						</script>
-					</div>
-					<div class="col-lg-3 centered">
-						<canvas id="illustrator" height="130" width="130"></canvas>
-						<p>Java</p>
-						<br>
-						<script>
-							var doughnutData = [
-									{
-										value: 55,
-										color:"#1abc9c"
-									},
-									{
-										value : 45,
-										color : "#ecf0f1"
-									}
-								];
-								var myDoughnut = new Chart(document.getElementById("illustrator").getContext("2d")).Doughnut(doughnutData);
-						</script>
-					</div>
-
-			</div><!--/.row -->
-			<br>
-		</div><!--/.container -->
-	</div><!--/ #skillswrap -->
-
-
-	<!--
-	<section id="work" name="work"></section>
-	<!--PORTFOLIO DESCRIPTION 
-	<div class="container desc">
-		<div class="row">
-				<div class="col-lg-2 col-lg-offset-1">
-					<h5>PORTFOLIO</h5>
-				</div>
-				<div class="col-lg-6">
-					<p><img class="img-responsive" src="assets/img/port01.jpg" alt=""></p>
-				</div>
-				<div class="col-lg-3">
-					<p>CANALS OF ENGLAND</p>
-				<p><more>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br/><br/>
-					<sm><i class="icon-tag"></i> design</sm></more> 
-				</p>
-				</div>
-	
-				<div class="col-lg-6 col-lg-offset-3">
-					<p><img class="img-responsive" src="assets/img/port02.jpg" alt=""></p>
-				</div>
-				<div class="col-lg-3">
-						<p>SANKEY</p>
-					<p><more>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br/><br/>
-						<sm><i class="icon-tag"></i> front-end</sm></more> 
-					</p>
-				</div>
-				
-				<div class="col-lg-6 col-lg-offset-3">
-					<p><img class="img-responsive" src="assets/img/port03.jpg" alt=""></p>
-				</div>
-				<div class="col-lg-3">
-						<p>WE GROW</p>
-					<p><more>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br/><br/>
-						<sm><i class="icon-tag"></i> web design</sm></more> 
-					</p>
-				</div>
-		
-		</div><!--/.row 
-		<br>
-		<br>
-	</div><!--/.container 
-	-->
-	
-
-
-	<section id="contact" name="contact"></section>
-	<!--FOOTER DESCRIPTION -->
-	<div id="footwrap">
-		<div class="container">
-			<div class="row">
-			
-				<div class="col-lg-2 col-lg-offset-1">
-					<h5>CONTACT</h5>
-				</div>
-				<div class="col-lg-6">
-					<p><t>Email</t><br/>
-						<a href="mailto:haotiansun96@gmail.com">haotiansun96@gmail.com</a> <br/>
-					</p>
-					<p><t>Address</t><br/>
-						Room 1105, Building 4# <br/>
-						Weijin Road, No.92, Nankai District <br/>
-						Tianjin 300072 <br/>
-						P.R.China <br/>
-					</p>
-					<p><t>Phone</t><br/>
-						+86 1310-218-0138 <br/>
-					</p>
-				</div>
-				<div class="col-lg-3">
-					<p><sm>SOCIAL LINKS</sm></p>
-					<p>
-						<a href="https://www.facebook.com/profile.php?id=100012949785806"><i class="icon-facebook"></i></a>
-						<a href="https://www.linkedin.com/in/haotian-sun-971453141/"><i class="icon-linkedin"></i></a>
-
-					</p>
-				</div>
-			</div><!--/.row -->
-		</div><!--/.container -->
-	</div><!--/ #footer -->
-	
-	<div id="c">
-		<div class="container">
-			<p>Created by <a href="http://www.blacktie.co">BLACKTIE.CO</a></p>
-		
-		</div>
-	</div>
-	
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/bootstrap.js"></script>
-  </body>
+</body>
 </html>
