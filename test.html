@@ -17,7 +17,7 @@ clearInterval(timer); //作用见要点①
 obtn.onclick=function(){
 timer=setInterval(function(){
 var speed=10;
-if(odiv.offsetLeft>=300){ //判断对象边距 到达指定位移则关闭定时器
+if(odiv.offsetLeft<=300){ //判断对象边距 到达指定位移则关闭定时器
 clearInterval(timer);
 }else{
 odiv.style.left=odiv.offsetLeft+speed+'px';

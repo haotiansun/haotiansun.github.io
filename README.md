@@ -11,7 +11,7 @@
 ### index.html
 ![img2](https://github.com/haotiansun/202020/blob/master/img/index_1.png)
 ![img3](https://github.com/haotiansun/202020/blob/master/img/index_2.png)
-- [ ] Hover color change
-- [ ] Hover translation
-- [ ] 3 sections hover display(color change, text)
-- [ ] Button linked to Countdown.html
+- [x] Hover color change
+- [x] Hover translation
+- [x] 3 sections hover display(color change, text)
+- [x] Button linked to Countdown.html
