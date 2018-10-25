@@ -1,6 +1,21 @@
+<!DOCTYPE html>
 <html>
+<meta charset="utf-8">
 <head>
-<style>
+<style type="text/css">
+    body{
+    background-color: #FAFAFA;
+    }
+    input{
+        background:transparent;
+	border:none;
+	width:490px;height:180px;
+	font-size:192px;
+	font-weight:300; 
+	font-family:'Kozuka Gothic Pro'; 
+	color:rgb(178,34,34);
+	text-align:center;
+    }
 </style>
 <script type="text/javascript">
 const time = 1200
@@ -63,15 +78,7 @@ function timedCountrelax()
 <body onload = "javascript:{this.disabled = true;timedCount()}">
 <center>
 <!--文本框显示倒计时数字-->
-<input style="background:transparent;border:none;width:490px;height:180px;font-size:192px;text-align:center;font-family:Code Light;color:rgb(204,102,102);font-weight:lighter" type="text" id="txt" readonly="readonly">
+<input type="text" id="txt" readonly="readonly">
 </center>
 </body>
-
-<style type="text/css">
-    body{
-    background-color: #FAFAFA;
-    }
-</style>
-
-
 </html>
